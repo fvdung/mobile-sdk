@@ -18,8 +18,7 @@ struct Version{
     static let iOS9 = (Version.SYS_VERSION_FLOAT >= 9.0 && Version.SYS_VERSION_FLOAT < 10.0)
     static let iOS10 = (Version.SYS_VERSION_FLOAT >= 10.0)
 }
-@objc(MoMoPayment)
-public class MoMoPayment: NSObject {
+@objc public class MoMoPayment: NSObject {
     class var sharedInstance:MoMoPayment {
         return _sharedInstance
     }
@@ -125,6 +124,7 @@ public class MoMoPayment: NSObject {
 //    }
     
     
+    @objc
     public static func requestToken() {
 
         if (paymentInfo as NSMutableDictionary?) == nil {
@@ -220,7 +220,6 @@ public class MoMoPayment: NSObject {
         }
         
     }
-    @objc
     open func requestPayment(parram: NSMutableDictionary) {
         print("<MoMoPay> please implement this function by your self")
         //
