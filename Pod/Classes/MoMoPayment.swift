@@ -18,6 +18,7 @@ struct Version{
     static let iOS9 = (Version.SYS_VERSION_FLOAT >= 9.0 && Version.SYS_VERSION_FLOAT < 10.0)
     static let iOS10 = (Version.SYS_VERSION_FLOAT >= 10.0)
 }
+@objc(MoMoPayment)
 public class MoMoPayment: NSObject {
     class var sharedInstance:MoMoPayment {
         return _sharedInstance
@@ -32,6 +33,7 @@ public class MoMoPayment: NSObject {
         print("<MoMoPay> initializing successful - Your merchantcode \(merchantCode)")
     }
     
+    @objc
     public static func handleOpenUrl(url: URL, sourceApp: String) {
         //let sourceURI = url.absoluteString! as String
         let sourceURI = url.absoluteString;
@@ -109,6 +111,7 @@ public class MoMoPayment: NSObject {
         return info
     }
     
+    @objc
     public static func createPaymentInformation(info: NSMutableDictionary) {
         paymentInfo = info
     }
@@ -217,6 +220,7 @@ public class MoMoPayment: NSObject {
         }
         
     }
+    @objc
     open func requestPayment(parram: NSMutableDictionary) {
         print("<MoMoPay> please implement this function by your self")
         //
